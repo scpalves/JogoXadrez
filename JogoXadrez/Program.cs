@@ -13,7 +13,9 @@ namespace JogoXadrez
         {
             Tabuleiro tab = new Tabuleiro(8,8);
 
-            Console.WriteLine("tabuleiro " + tab);
+            Ecra.imprimirTabuleiro(tab);
+
+            Console.WriteLine();
 
 
         }
