@@ -17,7 +17,24 @@ namespace JogoXadrez
                 try
                 {
                     PartidaXadrez partida = new PartidaXadrez();
-                    Ecra.imprimirTabuleiro(partida.tab);
+
+                    while (!partida.terminada)
+                    {
+                        Console.Clear();
+                        Ecra.imprimirTabuleiro(partida.tab);
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        Console.Write("Origem: ");
+                        Posicao origem = Ecra.lerPosicaoXadrez().toPosicao();
+                        Console.Write("Destino: ");
+                        Posicao destino = Ecra.lerPosicaoXadrez().toPosicao();
+
+                        partida.executaMovimento(origem, destino);
+
+                    }
+                    
+                    
+         
                   
                 }
                 catch (Exception e)
