@@ -49,6 +49,7 @@
     <Compile Include="TabuleiroData\Posicao.cs" />
     <Compile Include="TabuleiroData\Tabuleiro.cs" />
     <Compile Include="TabuleiroData\TabuleiroException.cs" />
+    <Compile Include="XadrezBusiness\PartidaXadrez.cs" />
     <Compile Include="XadrezBusiness\PosicaoXadrez.cs" />
     <Compile Include="XadrezBusiness\Rei.cs" />
     <Compile Include="XadrezBusiness\Torre.cs" />
