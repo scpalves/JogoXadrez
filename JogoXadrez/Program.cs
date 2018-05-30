@@ -22,10 +22,19 @@ namespace JogoXadrez
                     {
                         Console.Clear();
                         Ecra.imprimirTabuleiro(partida.tab);
+                      
                         Console.WriteLine();
                         Console.WriteLine();
+                        
                         Console.Write("Origem: ");
                         Posicao origem = Ecra.lerPosicaoXadrez().toPosicao();
+
+                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+
+                        Console.Clear();
+                        Ecra.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
                         Console.Write("Destino: ");
                         Posicao destino = Ecra.lerPosicaoXadrez().toPosicao();
 
