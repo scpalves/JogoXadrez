@@ -20,26 +20,48 @@ namespace JogoXadrez
 
                     while (!partida.terminada)
                     {
-                        Console.Clear();
-                        Ecra.imprimirTabuleiro(partida.tab);
-                      
-                        Console.WriteLine();
-                        Console.WriteLine();
-                        
-                        Console.Write("Origem: ");
-                        Posicao origem = Ecra.lerPosicaoXadrez().toPosicao();
-
-                        bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+                        try
+                        {
 
 
-                        Console.Clear();
-                        Ecra.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
-                        Console.Write("Destino: ");
-                        Posicao destino = Ecra.lerPosicaoXadrez().toPosicao();
+                            Console.Clear();
+                            Ecra.imprimirTabuleiro(partida.tab);
 
-                        partida.executaMovimento(origem, destino);
+                            Console.WriteLine();
+                            Console.WriteLine("Turno: " + partida.turno);
+                            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
 
+
+                            Console.WriteLine();
+                            Console.WriteLine();
+
+                            Console.Write("Origem: ");
+                            Posicao origem = Ecra.lerPosicaoXadrez().toPosicao();
+
+                            partida.validarPosicaoOrigem(origem);
+
+                            bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+
+                            Console.Clear();
+                            Ecra.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+
+                            Console.WriteLine();
+                            Console.WriteLine();
+                            Console.Write("Destino: ");
+                            Posicao destino = Ecra.lerPosicaoXadrez().toPosicao();
+                            partida.validarPosicaoDestino(origem, destino);
+
+                            partida.realizaJogada(origem, destino);
+
+                        }
+                        catch (TabuleiroException e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.ReadLine();
+                        }
                     }
                     
                     
