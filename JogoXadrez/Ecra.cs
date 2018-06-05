@@ -1,12 +1,52 @@
 ﻿using System;
 using TabuleiroData;
 using XadrezBusiness;
+using System.Collections.Generic;
 
 
 namespace JogoXadrez
 {
     class Ecra
     {
+
+        public static void imprimirPartida(PartidaXadrez partida)
+        {
+
+            Ecra.imprimirTabuleiro(partida.tab);
+            imprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.turno);
+            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+
+        }
+
+        public static void imprimirPecasCapturadas(PartidaXadrez partida)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Peças capturadas:");
+            Console.Write("Brancas:");
+            imprimirConjunto(partida.pecasCpaturadas(Cor.Branca));
+            Console.WriteLine();
+            Console.Write("Pretas:");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            imprimirConjunto(partida.pecasCpaturadas(Cor.Preta));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+
+        public static void imprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach (var x in conjunto)
+            {
+                 Console.Write(x +" ");
+            }
+            Console.Write("]");
+        }
+
+
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
 

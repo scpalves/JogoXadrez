@@ -26,11 +26,13 @@ namespace JogoXadrez
 
 
                             Console.Clear();
-                            Ecra.imprimirTabuleiro(partida.tab);
+                            Ecra.imprimirPartida(partida);
 
-                            Console.WriteLine();
-                            Console.WriteLine("Turno: " + partida.turno);
-                            Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+                            //Ecra.imprimirTabuleiro(partida.tab);
+
+                            //Console.WriteLine();
+                            //Console.WriteLine("Turno: " + partida.turno);
+                            //Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
 
 
                             Console.WriteLine();
