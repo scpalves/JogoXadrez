@@ -34,7 +34,6 @@ namespace JogoXadrez
                             //Console.WriteLine("Turno: " + partida.turno);
                             //Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
 
-
                             Console.WriteLine();
                             Console.WriteLine();
 

@@ -17,6 +17,10 @@ namespace JogoXadrez
             Console.WriteLine();
             Console.WriteLine("Turno: " + partida.turno);
             Console.WriteLine("Aguardando jogada: " + partida.jogadorAtual);
+            if (partida.xeque)
+            {
+                Console.WriteLine("Xeque ao Rei!!");
+            }
 
         }
 
@@ -41,11 +45,10 @@ namespace JogoXadrez
             Console.Write("[");
             foreach (var x in conjunto)
             {
-                 Console.Write(x +" ");
+                Console.Write(x + " ");
             }
             Console.Write("]");
         }
-
 
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
@@ -57,8 +60,6 @@ namespace JogoXadrez
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     imprimirPeca(tab.peca(i, j));
-                
-
                 }
 
                 Console.WriteLine();
@@ -89,12 +90,8 @@ namespace JogoXadrez
                     }
                     imprimirPeca(tab.peca(i, j));
                     Console.BackgroundColor = fundoOriginal;
-
-
                 }
-
                 Console.WriteLine();
-
             }
 
             Console.Write("  a b c d e f g h");
