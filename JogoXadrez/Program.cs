@@ -64,8 +64,10 @@ namespace JogoXadrez
                             Console.ReadLine();
                         }
                     }
-                    
-                    
+
+
+                    Console.Clear();
+                    Ecra.imprimirPartida(partida);
          
                   
                 }
