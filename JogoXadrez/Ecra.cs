@@ -2,6 +2,7 @@
 using TabuleiroData;
 using XadrezBusiness;
 using System.Collections.Generic;
+using xadrez;
 
 
 namespace JogoXadrez
@@ -9,7 +10,7 @@ namespace JogoXadrez
     class Ecra
     {
 
-        public static void imprimirPartida(PartidaXadrez partida)
+        public static void imprimirPartida(PartidaDeXadrez partida)
         {
 
             Ecra.imprimirTabuleiro(partida.tab);
@@ -33,18 +34,18 @@ namespace JogoXadrez
 
         }
 
-        public static void imprimirPecasCapturadas(PartidaXadrez partida)
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
         {
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("Peças capturadas:");
             Console.Write("Brancas:");
-            imprimirConjunto(partida.pecasCpaturadas(Cor.Branca));
+            imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
             Console.WriteLine();
             Console.Write("Pretas:");
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
-            imprimirConjunto(partida.pecasCpaturadas(Cor.Preta));
+            imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
             Console.ForegroundColor = aux;
             Console.WriteLine();
         }

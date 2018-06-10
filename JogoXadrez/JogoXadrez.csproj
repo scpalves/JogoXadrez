@@ -52,7 +52,7 @@
     <Compile Include="XadrezBusiness\Bispo.cs" />
     <Compile Include="XadrezBusiness\Cavalo.cs" />
     <Compile Include="XadrezBusiness\Dama.cs" />
-    <Compile Include="XadrezBusiness\PartidaXadrez.cs" />
+    <Compile Include="XadrezBusiness\PartidaDeXadrez.cs" />
     <Compile Include="XadrezBusiness\Peao.cs" />
     <Compile Include="XadrezBusiness\PosicaoXadrez.cs" />
     <Compile Include="XadrezBusiness\Rei.cs" />

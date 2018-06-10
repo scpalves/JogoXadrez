@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TabuleiroData;
+using xadrez;
 
 namespace XadrezBusiness
 {
     class Rei: Peca
     {
 
-        private PartidaXadrez partida;
+        private PartidaDeXadrez partida;
 
-        public Rei(Tabuleiro tab, Cor cor, PartidaXadrez partida)
+        public Rei(Tabuleiro tab, Cor cor, PartidaDeXadrez partida)
             :base (tab, cor)
         {
             this.partida = partida;

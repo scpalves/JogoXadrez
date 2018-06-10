@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TabuleiroData;
+using xadrez;
 using XadrezBusiness;
 
 namespace JogoXadrez
@@ -16,7 +17,7 @@ namespace JogoXadrez
                
                 try
                 {
-                    PartidaXadrez partida = new PartidaXadrez();
+                    PartidaDeXadrez partida = new PartidaDeXadrez();
 
                     while (!partida.terminada)
                     {
@@ -40,7 +41,7 @@ namespace JogoXadrez
                             Console.Write("Origem: ");
                             Posicao origem = Ecra.lerPosicaoXadrez().toPosicao();
 
-                            partida.validarPosicaoOrigem(origem);
+                            partida.validarPosicaoDeOrigem(origem);
 
                             bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
 
@@ -53,7 +54,7 @@ namespace JogoXadrez
                             Console.WriteLine();
                             Console.Write("Destino: ");
                             Posicao destino = Ecra.lerPosicaoXadrez().toPosicao();
-                            partida.validarPosicaoDestino(origem, destino);
+                            partida.validarPosicaoDeDestino(origem, destino);
 
                             partida.realizaJogada(origem, destino);
 
